@@ -181,8 +181,9 @@
             position: absolute;
             inset: 0;
             background: url('https://i.imgur.com/BGyyKV9.jpeg') center/cover no-repeat;
-            opacity: 0.4;
+            opacity: 0.5;
             z-index: -1;
+            cursor: pointer; /* Indicates clickability */
         }
 
         .hero-content {
@@ -190,11 +191,24 @@
             max-width: 700px;
         }
 
-        .hero-content h2 { font-size: clamp(2rem, 5vw, 2.5rem); }
+        .hero-content h2 {
+            font-size: clamp(2rem, 5vw, 2.5rem);
+        }
+
         .hero-content p {
-            font-size: clamp(1rem, 2.5vw, 1.1rem);
+            font-size: clamp(1.25rem, 3vw, 1.5rem);
+            margin-top: 0.5rem;
             margin-bottom: 1.5rem;
             font-weight: 700;
+            line-height: 1.4;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            color: var(--light-color);
+            text-shadow: 0 0 8px rgba(0, 247, 255, 0.6), 0 0 12px rgba(0, 247, 255, 0.4);
+            background: rgba(10, 10, 26, 0.5);
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            display: inline-block;
         }
 
         /* Buttons */
@@ -298,7 +312,7 @@
         }
 
         #compra .card {
-            max-width: 600px; /* Increased to accommodate larger image */
+            max-width: 600px;
             margin: 0 auto;
         }
 
@@ -448,6 +462,11 @@
         @media (max-width: 768px) {
             section { padding: 2rem 5%; }
             .hero-content h2 { font-size: clamp(1.5rem, 4vw, 1.75rem); }
+            .hero-content p {
+                font-size: clamp(1rem, 2.5vw, 1.25rem);
+                padding: 0.4rem 0.8rem;
+                text-shadow: 0 0 6px rgba(0, 247, 255, 0.5);
+            }
             .btn { padding: 0.6rem 1.2rem; }
             .card, .location-subsection, form { padding: 1rem; }
             #servicios {
@@ -457,7 +476,7 @@
                 max-width: 250px;
             }
             #compra .card img {
-                max-width: 350px; /* Adjusted for smaller screens */
+                max-width: 350px;
             }
             #image-modal .close-btn {
                 top: 15px;
@@ -470,6 +489,11 @@
 
         @media (max-width: 480px) {
             section { padding: 1.5rem 5%; }
+            .hero-content p {
+                font-size: clamp(0.9rem, 2vw, 1rem);
+                padding: 0.3rem 0.6rem;
+                text-shadow: 0 0 4px rgba(0, 247, 255, 0.4);
+            }
             iframe { height: 200px; }
             .photo-gallery {
                 grid-template-columns: 1fr;
@@ -481,7 +505,7 @@
                 max-width: 100%;
             }
             #compra .card img {
-                max-width: 100%; /* Full width on very small screens */
+                max-width: 100%;
             }
             #image-modal img {
                 max-width: 95%;
@@ -517,7 +541,7 @@
 
     <main>
         <section id="hero" aria-labelledby="hero-heading">
-            <div class="hero-background"></div>
+            <div class="hero-background" aria-label="Ver imagen de fondo en tamaño completo"></div>
             <div class="hero-content">
                 <h2 id="hero-heading"><span class="typing"></span></h2>
                 <p>ESPECIALISTA EN ELECTRÓNICA & INFORMÁTICA. TRABAJO GARANTIZADO.</p>
@@ -677,7 +701,7 @@
         <div class="social-links">
             <a href="https://wa.me/593986258117?text=Hola,%20necesito%20reparar%20mi%20celular" aria-label="Contactar por WhatsApp" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> +593986258117</a>
             <a href="mailto:ande15351637@gmail.com" aria-label="Enviar correo electrónico" class="social-icon"><i class="fas fa-envelope"></i> ande15351637@gmail.com</a>
-            <a href="https://www.facebook.com/ande.ac.5?mibextid=ZbWKwL" aria-label="Visitar página de Facebook" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i> Facebook/CyberZone</a>
+            <a href="https://facebook.com/CyberZone" aria-label="Visitar página de Facebook" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i> Facebook/CyberZone</a>
             <a href="https://www.tiktok.com/@cyberzon3?_t=ZM-8wPYw4DhXOv&_r=1" aria-label="Visitar perfil de TikTok" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i> TikTok/Cyberzon3</a>
         </div>
     </footer>
@@ -738,6 +762,7 @@
         const modalImage = document.getElementById('modal-image');
         const closeBtn = document.querySelector('#image-modal .close-btn');
         const serviceImages = document.querySelectorAll('#servicios .card img');
+        const heroBackground = document.querySelector('.hero-background');
 
         // Ensure modal is hidden on load
         document.addEventListener('DOMContentLoaded', () => {
@@ -746,6 +771,7 @@
             modalImage.alt = '';
         });
 
+        // Service images click
         serviceImages.forEach(img => {
             img.addEventListener('click', () => {
                 modal.classList.add('show');
@@ -755,6 +781,15 @@
             });
         });
 
+        // Hero background click
+        heroBackground.addEventListener('click', () => {
+            modal.classList.add('show');
+            modalImage.src = 'https://i.imgur.com/BGyyKV9.jpeg';
+            modalImage.alt = 'Fondo del hero mostrando herramientas de reparación electrónica';
+            document.body.style.overflow = 'hidden';
+        });
+
+        // Close modal
         closeBtn.addEventListener('click', () => {
             modal.classList.remove('show');
             modalImage.src = '';
