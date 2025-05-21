@@ -8,7 +8,7 @@
     <meta property="og:title" content="Servicio Técnico Profesional">
     <meta property="og:description" content="Reparamos y compramos electrónicos en Otavalo. ¡Contáctanos!">
     <meta property="og:image" content="https://i.imgur.com/dSujdpg.jpeg">
-    <meta property="og:url" content="https://your-domain.com"> <!-- Replace with actual domain -->
+    <meta property="og:url" content="https://your-domain.com">
     <meta name="author" content="Servicio Técnico Profesional">
     <title>Servicio Técnico Profesional - Electrónica e Informática</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -228,11 +228,12 @@
 
         .card img {
             width: 100%;
-            max-width: 100%;
+            max-width: 350px; /* Increased max-width for larger images */
             height: auto;
             border-radius: var(--border-radius);
-            margin-bottom: 1rem;
+            margin: 0 auto 1rem; /* Center image and maintain margin */
             aspect-ratio: 4 / 3;
+            display: block; /* Ensures proper centering */
         }
 
         /* Sections */
@@ -242,8 +243,8 @@
 
         #servicios {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1rem;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Increased min width for larger cards */
+            gap: 1.5rem; /* Slightly increased gap for better spacing */
             background: url('https://i.imgur.com/TQq1HsM.jpeg') center/cover fixed;
             background-blend-mode: overlay;
             background-color: rgba(10, 10, 26, 0.9);
@@ -388,6 +389,12 @@
             .hero-content h2 { font-size: clamp(1.5rem, 4vw, 1.75rem); }
             .btn { padding: 0.6rem 1.2rem; }
             .card, .location-subsection, form { padding: 1rem; }
+            #servicios {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjusted for smaller screens */
+            }
+            .card img {
+                max-width: 250px; /* Smaller images on medium screens */
+            }
         }
 
         @media (max-width: 480px) {
@@ -395,6 +402,12 @@
             iframe { height: 200px; }
             .photo-gallery {
                 grid-template-columns: 1fr;
+            }
+            #servicios {
+                grid-template-columns: 1fr; /* Single column on small screens */
+            }
+            .card img {
+                max-width: 100%; /* Full width on small screens */
             }
         }
     </style>
@@ -576,9 +589,9 @@
     <footer aria-label="Pie de página con información de contacto">
         <p>© 2025 Servicio Técnico Profesional. Todos los derechos reservados.</p>
         <p>Técnico: Henry Arellano</p>
-        Siguenos en nuestras redes sociales:
+        <p>Síguenos en nuestras redes sociales:</p>
         <div class="social-links">
-            <a href="https://wa.me/593986258117?text=Hola, necesito reparar mi celular" aria-label="Contactar por WhatsApp" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> +593986258117</a>
+            <a href="https://wa.me/593986258117?text=Hola,%20necesito%20reparar%20mi%20celular" aria-label="Contactar por WhatsApp" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> +593986258117</a>
             <a href="mailto:ande15351637@gmail.com" aria-label="Enviar correo electrónico" class="social-icon"><i class="fas fa-envelope"></i> ande15351637@gmail.com</a>
             <a href="https://facebook.com/CyberZone" aria-label="Visitar página de Facebook" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i> Facebook/CyberZone</a>
             <a href="https://www.tiktok.com/@cyberzon3?_t=ZM-8wPYw4DhXOv&_r=1" aria-label="Visitar perfil de TikTok" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i> TikTok/Cyberzon3</a>
