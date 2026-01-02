@@ -25,16 +25,14 @@
             --gradient: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             --card-bg: rgba(10, 10, 26, 0.7);
             --shadow: 0 4px 12px rgba(0, 103, 255, 0.1);
-            --border-radius: 8px;
+            --border-radius: 12px;
             --transition: all 0.3s ease;
         }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
         body {
             font-family: 'Poppins', sans-serif;
             background-color: var(--dark-color);
@@ -44,7 +42,6 @@
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
-
         h1, h2, h3, h4 {
             font-family: 'Orbitron', sans-serif;
             font-weight: 700;
@@ -52,26 +49,22 @@
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            /* Mejora visual: glow neón futurista */
-            text-shadow: 
+            text-shadow:
                 0 0 8px var(--primary-color),
                 0 0 16px var(--primary-color),
                 0 0 24px var(--secondary-color);
             transition: text-shadow 0.4s ease;
         }
-
         h1:hover, h2:hover, h3:hover, h4:hover {
-            text-shadow: 
+            text-shadow:
                 0 0 12px var(--primary-color),
                 0 0 24px var(--primary-color),
                 0 0 36px var(--accent-color);
         }
-
         h1 { font-size: clamp(1.5rem, 3vw, 1.75rem); }
         h2 { font-size: clamp(1.75rem, 4vw, 2rem); margin: 2rem 0; text-align: center; }
         h3 { font-size: clamp(1.25rem, 2.5vw, 1.5rem); }
         h4 { font-size: clamp(1rem, 2vw, 1.25rem); margin: 1rem 0; }
-
         h2::after {
             content: '';
             display: block;
@@ -81,24 +74,20 @@
             margin: 0.5rem auto;
             border-radius: 3px;
         }
-
         p {
             font-size: clamp(0.9rem, 2vw, 1rem);
             margin-bottom: 1rem;
             color: #e6f0ff;
         }
-
         a {
             color: var(--primary-color);
             text-decoration: none;
             transition: var(--transition);
         }
-
         a:hover, a:focus {
             color: var(--accent-color);
             outline: none;
         }
-
         /* Preloader */
         #preloader {
             position: fixed;
@@ -112,12 +101,10 @@
             z-index: 9999;
             transition: opacity 0.5s ease;
         }
-
         #preloader.fade-out {
             opacity: 0;
             pointer-events: none;
         }
-
         .spinner {
             width: 50px;
             height: 50px;
@@ -126,11 +113,9 @@
             border-radius: 50%;
             animation: spin 1s linear infinite;
         }
-
         @keyframes spin {
             to { transform: rotate(360deg); }
         }
-
         /* Header */
         #main-header {
             position: sticky;
@@ -144,18 +129,15 @@
             backdrop-filter: blur(8px);
             z-index: 1000;
         }
-
         #main-header nav {
             display: flex;
             gap: 1.5rem;
         }
-
         #main-header nav a {
             font-size: clamp(0.9rem, 2vw, 0.95rem);
             padding: 0.5rem;
             position: relative;
         }
-
         #main-header nav a::after {
             content: '';
             position: absolute;
@@ -166,11 +148,9 @@
             background: var(--gradient);
             transition: var(--transition);
         }
-
         #main-header nav a:hover::after {
             width: 100%;
         }
-
         .hamburger {
             display: none;
             background: none;
@@ -179,7 +159,6 @@
             font-size: 1.5rem;
             cursor: pointer;
         }
-
         /* Hero Section */
         #hero {
             min-height: 80vh;
@@ -189,7 +168,6 @@
             position: relative;
             overflow: hidden;
         }
-
         .hero-background {
             position: absolute;
             inset: 0;
@@ -198,16 +176,13 @@
             z-index: -1;
             cursor: pointer;
         }
-
         .hero-content {
             text-align: center;
             max-width: 700px;
         }
-
         .hero-content h2 {
             font-size: clamp(2rem, 5vw, 2.5rem);
         }
-
         .hero-content p {
             font-size: clamp(1.25rem, 3vw, 1.5rem);
             margin-top: 0.5rem;
@@ -223,185 +198,189 @@
             border-radius: var(--border-radius);
             display: inline-block;
         }
-
         /* Buttons */
         .btn {
             display: inline-block;
-            padding: 0.75rem 1.5rem;
+            padding: 0.75rem 1.8rem;
             background: var(--gradient);
             color: white;
-            border-radius: 25px;
+            border-radius: 30px;
             font-weight: 600;
             cursor: pointer;
             transition: var(--transition);
-            font-size: clamp(0.9rem, 2vw, 0.95rem);
+            font-size: clamp(0.95rem, 2vw, 1rem);
+            box-shadow: 0 4px 15px rgba(0, 247, 255, 0.3);
         }
-
         .btn:hover, .btn:focus {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 247, 255, 0.5);
         }
-
-        /* Cards mejorados */
+        /* Cards mejorados - IMÁGENES MÁS GRANDES */
         .card, .photo-card {
             background: var(--card-bg);
             border-radius: var(--border-radius);
-            padding: 1.5rem;
-            margin: 1rem;
+            padding: 2rem;
+            margin: 1.5rem;
             transition: var(--transition);
             backdrop-filter: blur(8px);
             text-align: center;
             border: 1px solid rgba(0, 247, 255, 0.2);
-            box-shadow: 0 0 10px rgba(0, 247, 255, 0.15);
+            box-shadow: 0 0 15px rgba(0, 247, 255, 0.2);
         }
-
         .card:hover, .photo-card:hover {
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: 
-                0 0 20px var(--primary-color),
-                0 0 40px rgba(0, 247, 255, 0.4),
+            transform: translateY(-8px) scale(1.03);
+            box-shadow:
+                0 0 30px var(--primary-color),
+                0 0 60px rgba(0, 247, 255, 0.5),
                 var(--shadow);
             border-color: var(--primary-color);
         }
-
         .card img, .photo-card img {
             width: 100%;
-            max-width: 350px;
+            max-width: 450px; /* AUMENTADO para más impacto */
             height: auto;
             border-radius: var(--border-radius);
-            margin: 0 auto 1rem;
+            margin: 0 auto 1.5rem;
+            object-fit: cover;
             aspect-ratio: 4 / 3;
             display: block;
             cursor: pointer;
             transition: var(--transition);
-            box-shadow: 0 0 8px rgba(0, 247, 255, 0.2);
+            box-shadow: 0 0 15px rgba(0, 247, 255, 0.3);
         }
-
         .card img:hover, .photo-card img:hover {
-            box-shadow: 
-                0 0 20px var(--primary-color),
-                0 0 30px var(--accent-color);
-            transform: scale(1.03);
-        }
-
-        /* Ajuste para sección compra */
-        #compra .card img {
-            max-width: 500px;
-            box-shadow: 0 0 12px rgba(0, 247, 255, 0.3);
-        }
-
-        #compra .card img:hover {
-            box-shadow: 
+            box-shadow:
                 0 0 30px var(--primary-color),
                 0 0 50px var(--accent-color);
+            transform: scale(1.05);
         }
-
+        /* Sección compra - imagen aún más grande */
+        #compra .card img {
+            max-width: 700px; /* Mucho más relleno */
+            box-shadow: 0 0 20px rgba(0, 247, 255, 0.4);
+        }
+        #compra .card img:hover {
+            box-shadow:
+                0 0 50px var(--primary-color),
+                0 0 80px var(--accent-color);
+        }
+        /* Galería de fotos - imágenes más grandes */
+        .photo-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
         /* Sections */
         section {
-            padding: 3rem 5%;
+            padding: 4rem 5%;
         }
-
         #servicios {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
             background: url('https://github.com/user-attachments/assets/cd648beb-ff66-4b0c-a999-3a0123ba3588') center/cover fixed;
             background-blend-mode: overlay;
             background-color: rgba(10, 10, 26, 0.9);
         }
-
         #ubicacion .location-subsection {
             background: var(--card-bg);
-            padding: 1.5rem;
+            padding: 2rem;
             border-radius: var(--border-radius);
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
         }
-
         iframe {
             width: 100%;
-            height: clamp(250px, 50vw, 350px);
+            height: clamp(300px, 50vw, 400px);
             border-radius: var(--border-radius);
-            margin: 1rem 0;
+            margin: 1.5rem 0;
         }
-
-        .photo-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1rem;
-        }
-
         #compra {
             background: url('https://github.com/user-attachments/assets/f0f54918-b2a9-4e2c-ad56-f3be0389f3c4') center/cover fixed;
             background-blend-mode: overlay;
             background-color: rgba(10, 10, 26, 0.9);
             text-align: center;
         }
-
         #compra .card {
-            max-width: 600px;
+            max-width: 800px;
             margin: 0 auto;
         }
-
         /* Forms */
         form {
-            max-width: 500px;
+            max-width: 550px;
             margin: 0 auto;
             background: var(--card-bg);
-            padding: 1.5rem;
+            padding: 2rem;
             border-radius: var(--border-radius);
         }
-
         .form-group {
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
         }
-
         label {
             display: block;
-            font-size: clamp(0.9rem, 2vw, 0.95rem);
+            font-size: clamp(0.95rem, 2vw, 1rem);
             color: var(--primary-color);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.6rem;
         }
-
         input, textarea {
             width: 100%;
-            padding: 0.75rem;
-            background: rgba(10, 10, 26, 0.5);
-            border: 1px solid rgba(0, 247, 255, 0.2);
+            padding: 0.9rem;
+            background: rgba(10, 10, 26, 0.6);
+            border: 1px solid rgba(0, 247, 255, 0.3);
             border-radius: var(--border-radius);
             color: var(--light-color);
-            font-size: clamp(0.9rem, 2vw, 0.95rem);
+            font-size: clamp(0.95rem, 2vw, 1rem);
         }
-
         input:focus, textarea:focus {
             outline: 2px solid var(--primary-color);
+            box-shadow: 0 0 15px rgba(0, 247, 255, 0.4);
         }
-
         textarea {
-            min-height: 120px;
+            min-height: 140px;
             resize: vertical;
         }
-
-        /* Footer */
+        /* Footer - REDES SOCIALES MEJORADAS */
         footer {
-            padding: 2rem 5%;
-            background-color: rgba(0, 6, 12, 0.8);
+            padding: 3rem 5%;
+            background-color: rgba(0, 6, 12, 0.95);
             text-align: center;
         }
-
         .social-links {
             display: flex;
             justify-content: center;
-            gap: 1rem;
+            gap: 1.5rem;
             flex-wrap: wrap;
-            margin-top: 1rem;
+            margin-top: 1.5rem;
         }
-
         .social-icon {
             display: flex;
+            flex-direction: column;
             align-items: center;
-            gap: 0.5rem;
-            font-size: clamp(0.9rem, 2vw, 0.95rem);
+            gap: 0.8rem;
+            font-size: 1rem;
+            color: var(--light-color);
+            transition: var(--transition);
         }
+        .social-icon i {
+            font-size: 2.8rem;
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+        }
+        .social-icon:hover i {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
+        /* Colores específicos por red */
+        .social-icon[href*="wa.me"] i { color: #25D366; }
+        .social-icon[href*="facebook"] i { color: #1877F2; }
+        .social-icon[href*="tiktok"] i { color: #000000; background: linear-gradient(45deg, #ff0050, #000000, #00f2ea); -webkit-background-clip: text; color: transparent; }
+        .social-icon[href*="mailto"] i { color: #EA4335; }
 
         /* Image Modal */
         #image-modal {
@@ -411,7 +390,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.8);
+            background: rgba(0, 0, 0, 0.9);
             z-index: 2000;
             justify-content: center;
             align-items: center;
@@ -420,20 +399,17 @@
             visibility: hidden;
             transition: opacity 0.3s ease, visibility 0.3s ease;
         }
-
         #image-modal.show {
             display: flex;
             opacity: 1;
             visibility: visible;
         }
-
         #image-modal img {
-            max-width: 90%;
+            max-width: 95%;
             max-height: 90vh;
             border-radius: var(--border-radius);
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
         }
-
         #image-modal .close-btn {
             position: absolute;
             top: 20px;
@@ -442,23 +418,20 @@
             color: var(--dark-color);
             border: none;
             border-radius: 50%;
-            width: 40px;
-            height: 40px;
-            font-size: 24px;
+            width: 45px;
+            height: 45px;
+            font-size: 26px;
             cursor: pointer;
             display: flex;
             justify-content: center;
             align-items: center;
             transition: var(--transition);
         }
-
-        #image-modal .close-btn:hover,
-        #image-modal .close-btn:focus {
+        #image-modal .close-btn:hover {
             background: var(--accent-color);
-            color: var(--light-color);
+            transform: rotate(90deg);
         }
-
-        /* Responsive Design */
+        /* Responsive */
         @media (max-width: 992px) {
             #main-header nav {
                 position: fixed;
@@ -471,72 +444,30 @@
                 justify-content: center;
                 transition: var(--transition);
             }
-
             #main-header nav.active {
                 right: 0;
             }
-
             .hamburger {
                 display: block;
             }
-
             .hamburger.active i::before {
                 content: '\f00d';
             }
         }
-
         @media (max-width: 768px) {
-            section { padding: 2rem 5%; }
-            .hero-content h2 { font-size: clamp(1.5rem, 4vw, 1.75rem); }
-            .hero-content p {
-                font-size: clamp(1rem, 2.5vw, 1.25rem);
-                padding: 0.4rem 0.8rem;
-                text-shadow: 0 0 6px rgba(0, 247, 255, 0.5);
-            }
-            .btn { padding: 0.6rem 1.2rem; }
-            .card, .location-subsection, form { padding: 1rem; }
-            #servicios {
-                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            }
-            .card img {
-                max-width: 250px;
-            }
-            #compra .card img {
-                max-width: 350px;
-            }
-            #image-modal .close-btn {
-                top: 15px;
-                right: 15px;
-                width: 32px;
-                height: 32px;
-                font-size: 20px;
-            }
+            section { padding: 3rem 5%; }
+            .card, .photo-card { padding: 1.5rem; margin: 1rem; }
+            .card img, .photo-card img { max-width: 380px; }
+            #compra .card img { max-width: 500px; }
+            .social-icon i { font-size: 2.4rem; width: 60px; height: 60px; }
         }
-
         @media (max-width: 480px) {
-            section { padding: 1.5rem 5%; }
-            .hero-content p {
-                font-size: clamp(0.9rem, 2vw, 1rem);
-                padding: 0.3rem 0.6rem;
-                text-shadow: 0 0 4px rgba(0, 247, 255, 0.4);
-            }
-            iframe { height: 200px; }
-            .photo-gallery {
-                grid-template-columns: 1fr;
-            }
-            #servicios {
-                grid-template-columns: 1fr;
-            }
-            .card img {
-                max-width: 100%;
-            }
-            #compra .card img {
-                max-width: 100%;
-            }
-            #image-modal img {
-                max-width: 95%;
-                max-height: 85vh;
-            }
+            section { padding: 2rem 5%; }
+            .photo-gallery { grid-template-columns: 1fr; }
+            .card img, .photo-card img { max-width: 100%; }
+            #compra .card img { max-width: 100%; }
+            .social-links { gap: 1.2rem; }
+            .social-icon i { font-size: 2.2rem; width: 55px; height: 55px; }
         }
     </style>
 </head>
@@ -544,13 +475,11 @@
     <div id="preloader" aria-hidden="true">
         <div class="spinner" aria-label="Cargando página"></div>
     </div>
-
     <!-- Image Modal -->
     <div id="image-modal" role="dialog" aria-label="Vista ampliada de la imagen">
         <img src="" alt="Imagen ampliada" id="modal-image">
         <button class="close-btn" aria-label="Cerrar imagen ampliada">X</button>
     </div>
-
     <header id="main-header" role="banner">
         <h1>Servicio Técnico Profesional</h1>
         <button class="hamburger" aria-label="Abrir o cerrar menú de navegación" aria-expanded="false">
@@ -564,7 +493,6 @@
             <a href="#contacto" aria-label="Ir a la sección de contacto">Contacto</a>
         </nav>
     </header>
-
     <main>
         <section id="hero" aria-labelledby="hero-heading">
             <div class="hero-background" aria-label="Ver imagen de fondo en tamaño completo"></div>
@@ -574,7 +502,6 @@
                 <a href="#contacto" class="btn" aria-label="Contáctanos para servicios o consultas">Contáctanos Ahora</a>
             </div>
         </section>
-
         <section id="servicios" aria-labelledby="servicios-heading">
             <h2 id="servicios-heading">Nuestros Servicios</h2>
             <div class="card">
@@ -608,7 +535,6 @@
                 <p>Reparaciones especializadas en circuitos electrónicos para dispositivos de todo tipo.</p>
             </div>
         </section>
-
         <section id="ubicacion" aria-labelledby="ubicacion-heading">
             <h2 id="ubicacion-heading">Nuestras Ubicaciones</h2>
             <p>Visítanos en nuestros talleres para reparaciones o para vender tus dispositivos dañados.</p>
@@ -651,7 +577,6 @@
                 </div>
             </div>
         </section>
-
         <section id="compra" aria-labelledby="compra-heading">
             <h2 id="compra-heading">Compramos Equipos Dañados</h2>
             <p>¿Tienes un celular, TV, laptop o consola dañada? ¡Nosotros la compramos!</p>
@@ -662,7 +587,6 @@
                 <a href="#contacto" class="btn" aria-label="Solicitar cotización para equipos dañados">Solicitar Cotización</a>
             </div>
         </section>
-
         <section id="solicitud-repuesto" aria-labelledby="solicitud-repuesto-heading">
             <h2 id="solicitud-repuesto-heading">Solicitud de Repuesto</h2>
             <p>¿Necesitas un repuesto específico? Completa el formulario y te ayudaremos.</p>
@@ -694,7 +618,6 @@
                 <button type="submit" class="btn" aria-label="Enviar solicitud de repuesto">Enviar Solicitud</button>
             </form>
         </section>
-
         <section id="contacto" aria-labelledby="contacto-heading">
             <h2 id="contacto-heading">Contáctanos</h2>
             <p>Envíanos un mensaje para reparaciones o venta de dispositivos dañados.</p>
@@ -719,19 +642,29 @@
             </form>
         </section>
     </main>
-
     <footer aria-label="Pie de página con información de contacto">
         <p>© 2026 Servicio Técnico Profesional. Todos los derechos reservados.</p>
         <p>Técnico: Henry Arellano</p>
         <p>Síguenos en nuestras redes sociales:</p>
         <div class="social-links">
-            <a href="https://wa.me/593986258117?text=Hola,%20necesito%20reparar%20mi%20celular" aria-label="Contactar por WhatsApp" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> +593986258117</a>
-            <a href="mailto:ande15351637@gmail.com" aria-label="Enviar correo electrónico" class="social-icon"><i class="fas fa-envelope"></i> ande15351637@gmail.com</a>
-            <a href="https://facebook.com/CyberZone" aria-label="Visitar página de Facebook" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-facebook-f"></i> Facebook/CyberZone</a>
-            <a href="https://www.tiktok.com/@cyberzon3?_t=ZM-8wPYw4DhXOv&_r=1" aria-label="Visitar perfil de TikTok" class="social-icon" target="_blank" rel="noopener noreferrer"><i class="fab fa-tiktok"></i> TikTok/Cyberzon3</a>
+            <a href="https://wa.me/593986258117?text=Hola,%20necesito%20reparar%20mi%20celular" aria-label="Contactar por WhatsApp" class="social-icon" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-whatsapp"></i>
+                <span>WhatsApp</span>
+            </a>
+            <a href="mailto:ande15351637@gmail.com" aria-label="Enviar correo electrónico" class="social-icon">
+                <i class="fas fa-envelope"></i>
+                <span>Email</span>
+            </a>
+            <a href="https://facebook.com/CyberZone" aria-label="Visitar página de Facebook" class="social-icon" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-facebook-f"></i>
+                <span>Facebook</span>
+            </a>
+            <a href="https://www.tiktok.com/@cyberzon3?_t=ZM-8wPYw4DhXOv&_r=1" aria-label="Visitar perfil de TikTok" class="social-icon" target="_blank" rel="noopener noreferrer">
+                <i class="fab fa-tiktok"></i>
+                <span>TikTok</span>
+            </a>
         </div>
     </footer>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.12/typed.min.js" integrity="sha512-3JbfF8EvBcTYXPdc4ZNf1Z1r1UfetG19auW4N4Y4v3Av+1uAHdgSyP0DH0nO2p85O0KowM8kNwk2J7a7N8H5A5g==" crossorigin="anonymous" referrerpolicy="no-referrer" defer></script>
     <script>
         // Preloader
@@ -740,7 +673,6 @@
             preloader.classList.add('fade-out');
             setTimeout(() => preloader.style.display = 'none', 500);
         });
-
         // Mobile Menu
         const hamburger = document.querySelector('.hamburger');
         const nav = document.querySelector('#main-header nav');
@@ -749,7 +681,6 @@
             nav.classList.toggle('active');
             hamburger.setAttribute('aria-expanded', hamburger.classList.contains('active'));
         });
-
         document.querySelectorAll('#main-header nav a').forEach(link => {
             link.addEventListener('click', () => {
                 hamburger.classList.remove('active');
@@ -757,7 +688,6 @@
                 hamburger.setAttribute('aria-expanded', 'false');
             });
         });
-
         // Typing Effect
         document.addEventListener('DOMContentLoaded', () => {
             new Typed('.typing', {
@@ -768,7 +698,6 @@
                 cursorChar: '|'
             });
         });
-
         // Smooth Scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', e => {
@@ -782,22 +711,19 @@
                 }
             });
         });
-
         // Image Modal Functionality
         const modal = document.getElementById('image-modal');
         const modalImage = document.getElementById('modal-image');
         const closeBtn = document.querySelector('#image-modal .close-btn');
-        const serviceImages = document.querySelectorAll('#servicios .card img');
+        const serviceImages = document.querySelectorAll('#servicios .card img, .photo-card img');
         const heroBackground = document.querySelector('.hero-background');
-
         // Ensure modal is hidden on load
         document.addEventListener('DOMContentLoaded', () => {
             modal.classList.remove('show');
             modalImage.src = '';
             modalImage.alt = '';
         });
-
-        // Service images click
+        // Service and gallery images click
         serviceImages.forEach(img => {
             img.addEventListener('click', () => {
                 modal.classList.add('show');
@@ -806,7 +732,6 @@
                 document.body.style.overflow = 'hidden';
             });
         });
-
         // Hero background click
         heroBackground.addEventListener('click', () => {
             modal.classList.add('show');
@@ -814,7 +739,6 @@
             modalImage.alt = 'Fondo del hero mostrando herramientas de reparación electrónica';
             document.body.style.overflow = 'hidden';
         });
-
         // Close modal
         closeBtn.addEventListener('click', () => {
             modal.classList.remove('show');
@@ -822,7 +746,6 @@
             modalImage.alt = '';
             document.body.style.overflow = 'auto';
         });
-
         modal.addEventListener('click', (e) => {
             if (e.target === modal) {
                 modal.classList.remove('show');
@@ -831,7 +754,6 @@
                 document.body.style.overflow = 'auto';
             }
         });
-
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && modal.classList.contains('show')) {
                 modal.classList.remove('show');
