@@ -7,7 +7,7 @@
     <meta name="keywords" content="servicio técnico, reparación electrónica, informática, compra celulares dañados, repuestos específicos, Otavalo">
     <meta property="og:title" content="Servicio Técnico Profesional">
     <meta property="og:description" content="Reparamos y compramos electrónicos en Otavalo. ¡Contáctanos!">
-    <meta property="og:image" content="https://i.imgur.com/dSujdpg.jpeg">
+    <meta property="og:image" content="https://github.com/user-attachments/assets/3affb71d-cb84-4ace-8d81-d4ffefc5c5f3">
     <meta property="og:url" content="https://your-domain.com">
     <meta name="author" content="Servicio Técnico Profesional">
     <title>Servicio Técnico Profesional - Electrónica e Informática</title>
@@ -52,6 +52,19 @@
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+            /* Mejora visual: glow neón futurista */
+            text-shadow: 
+                0 0 8px var(--primary-color),
+                0 0 16px var(--primary-color),
+                0 0 24px var(--secondary-color);
+            transition: text-shadow 0.4s ease;
+        }
+
+        h1:hover, h2:hover, h3:hover, h4:hover {
+            text-shadow: 
+                0 0 12px var(--primary-color),
+                0 0 24px var(--primary-color),
+                0 0 36px var(--accent-color);
         }
 
         h1 { font-size: clamp(1.5rem, 3vw, 1.75rem); }
@@ -180,10 +193,10 @@
         .hero-background {
             position: absolute;
             inset: 0;
-            background: url('https://i.imgur.com/BGyyKV9.jpeg') center/cover no-repeat;
+            background: url('https://github.com/user-attachments/assets/ccdb4c85-a630-4c8e-b4fe-9c8a2ae75632') center/cover no-repeat;
             opacity: 0.5;
             z-index: -1;
-            cursor: pointer; /* Indicates clickability */
+            cursor: pointer;
         }
 
         .hero-content {
@@ -229,8 +242,8 @@
             box-shadow: var(--shadow);
         }
 
-        /* Cards */
-        .card {
+        /* Cards mejorados */
+        .card, .photo-card {
             background: var(--card-bg);
             border-radius: var(--border-radius);
             padding: 1.5rem;
@@ -238,9 +251,20 @@
             transition: var(--transition);
             backdrop-filter: blur(8px);
             text-align: center;
+            border: 1px solid rgba(0, 247, 255, 0.2);
+            box-shadow: 0 0 10px rgba(0, 247, 255, 0.15);
         }
 
-        .card img {
+        .card:hover, .photo-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 
+                0 0 20px var(--primary-color),
+                0 0 40px rgba(0, 247, 255, 0.4),
+                var(--shadow);
+            border-color: var(--primary-color);
+        }
+
+        .card img, .photo-card img {
             width: 100%;
             max-width: 350px;
             height: auto;
@@ -249,11 +273,27 @@
             aspect-ratio: 4 / 3;
             display: block;
             cursor: pointer;
+            transition: var(--transition);
+            box-shadow: 0 0 8px rgba(0, 247, 255, 0.2);
         }
 
-        /* Increase image size in #compra section */
+        .card img:hover, .photo-card img:hover {
+            box-shadow: 
+                0 0 20px var(--primary-color),
+                0 0 30px var(--accent-color);
+            transform: scale(1.03);
+        }
+
+        /* Ajuste para sección compra */
         #compra .card img {
             max-width: 500px;
+            box-shadow: 0 0 12px rgba(0, 247, 255, 0.3);
+        }
+
+        #compra .card img:hover {
+            box-shadow: 
+                0 0 30px var(--primary-color),
+                0 0 50px var(--accent-color);
         }
 
         /* Sections */
@@ -265,7 +305,7 @@
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 1.5rem;
-            background: url('https://i.imgur.com/TQq1HsM.jpeg') center/cover fixed;
+            background: url('https://github.com/user-attachments/assets/cd648beb-ff66-4b0c-a999-3a0123ba3588') center/cover fixed;
             background-blend-mode: overlay;
             background-color: rgba(10, 10, 26, 0.9);
         }
@@ -290,22 +330,8 @@
             gap: 1rem;
         }
 
-        .photo-card {
-            background: var(--card-bg);
-            padding: 1rem;
-            border-radius: var(--border-radius);
-        }
-
-        .photo-card img {
-            width: 100%;
-            max-width: 100%;
-            height: auto;
-            border-radius: var(--border-radius);
-            margin-bottom: 1rem;
-        }
-
         #compra {
-            background: url('https://i.imgur.com/t4xgasU.jpeg') center/cover fixed;
+            background: url('https://github.com/user-attachments/assets/f0f54918-b2a9-4e2c-ad56-f3be0389f3c4') center/cover fixed;
             background-blend-mode: overlay;
             background-color: rgba(10, 10, 26, 0.9);
             text-align: center;
@@ -552,32 +578,32 @@
         <section id="servicios" aria-labelledby="servicios-heading">
             <h2 id="servicios-heading">Nuestros Servicios</h2>
             <div class="card">
-                <img src="https://i.imgur.com/S5mgL2g.jpeg" alt="Técnico reparando una computadora de escritorio" loading="lazy">
+                <img src="https://github.com/user-attachments/assets/cd648beb-ff66-4b0c-a999-3a0123ba3588" alt="Técnico reparando una computadora de escritorio" loading="lazy">
                 <h3>Reparación de Computadoras</h3>
                 <p>Diagnóstico y reparación de computadoras de escritorio y portátiles, todas las marcas.</p>
             </div>
             <div class="card">
-                <img src="https://i.imgur.com/MypdaRm.jpeg" alt="Técnico reparando la pantalla de un celular" loading="lazy">
+                <img src="https://github.com/user-attachments/assets/51b40b93-c8e8-45b9-96dd-d22945c9336a" alt="Técnico reparando la pantalla de un celular" loading="lazy">
                 <h3>Reparación de Celulares</h3>
                 <p>Reparamos smartphones de cualquier marca, desde pantallas rotas hasta problemas de software.</p>
             </div>
             <div class="card">
-                <img src="https://i.imgur.com/TQq1HsM.jpeg" alt="Reparación de dispositivos electrónicos diversos" loading="lazy">
+                <img src="https://github.com/user-attachments/assets/6de3866b-7395-4b1d-b5c7-7c66d08d63c0" alt="Reparación de dispositivos electrónicos diversos" loading="lazy">
                 <h3>Electrónica General</h3>
                 <p>Servicio técnico para TVs, equipos de sonido, consolas, radios para carro, electrodomésticos y más.</p>
             </div>
             <div class="card">
-                <img src="https://i.imgur.com/PHJlBA4.jpeg" alt="Técnico realizando mantenimiento de dispositivos electrónicos" loading="lazy">
+                <img src="https://github.com/user-attachments/assets/3affb71d-cb84-4ace-8d81-d4ffefc5c5f3" alt="Técnico realizando mantenimiento de dispositivos electrónicos" loading="lazy">
                 <h3>Mantenimiento Preventivo</h3>
                 <p>Servicios de mantenimiento para prolongar la vida útil de tus dispositivos electrónicos.</p>
             </div>
             <div class="card">
-                <img src="https://i.imgur.com/QNmQKAN.jpeg" alt="Técnico actualizando software de dispositivos" loading="lazy">
+                <img src="https://github.com/user-attachments/assets/519fb0c7-47e8-4931-8331-d39929a89bd8" alt="Técnico actualizando software de dispositivos" loading="lazy">
                 <h3>Actualizaciones de Software</h3>
                 <p>Optimizamos y actualizamos el software de tus dispositivos para un mejor rendimiento.</p>
             </div>
             <div class="card">
-                <img src="https://i.imgur.com/dcC2U89.jpeg" alt="Técnico reparando circuitos electrónicos" loading="lazy">
+                <img src="https://github.com/user-attachments/assets/88a5f56f-cbd8-4050-b0d4-420748838c1a" alt="Técnico reparando circuitos electrónicos" loading="lazy">
                 <h3>Reparación de Circuitos</h3>
                 <p>Reparaciones especializadas en circuitos electrónicos para dispositivos de todo tipo.</p>
             </div>
@@ -595,13 +621,13 @@
                 <p>Mira algunas fotos de nuestro espacio de trabajo principal.</p>
                 <div class="photo-gallery">
                     <div class="photo-card">
-                        <img src="https://i.imgur.com/MazHGh0.jpeg" alt="Vista exterior del taller principal en Otavalo" loading="lazy">
+                        <img src="https://github.com/user-attachments/assets/0292157e-af96-453a-bcd7-266019642c47" alt="Vista exterior del taller principal en Otavalo" loading="lazy">
                     </div>
                     <div class="photo-card">
-                        <img src="https://i.imgur.com/YnVNJeJ.jpeg" alt="Área interna de reparación del taller principal" loading="lazy">
+                        <img src="https://github.com/user-attachments/assets/cb1f34e1-bb29-4b18-888b-00190ef57565" alt="Área interna de reparación del taller principal" loading="lazy">
                     </div>
                     <div class="photo-card">
-                        <img src="https://i.imgur.com/lw1sTUD.jpeg" alt="Letrero identificativo del taller principal" loading="lazy">
+                        <img src="https://github.com/user-attachments/assets/ce44e96e-4cbf-4018-9746-c08993d460c8" alt="Letrero identificativo del taller principal" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -614,13 +640,13 @@
                 <p>Imágenes de nuestro segundo taller, listo para atenderte.</p>
                 <div class="photo-gallery">
                     <div class="photo-card">
-                        <img src="https://i.imgur.com/hvkVApN.jpeg" alt="Vista exterior del taller secundario en Carabuela" loading="lazy">
+                        <img src="https://github.com/user-attachments/assets/1bfeae6e-a285-40a6-8256-eb0870bf3feb" alt="Vista exterior del taller secundario en Carabuela" loading="lazy">
                     </div>
                     <div class="photo-card">
-                        <img src="https://i.imgur.com/6ULHPnj.jpeg" alt="Área interna de reparación del taller secundario" loading="lazy">
+                        <img src="https://github.com/user-attachments/assets/19ef4224-f1d9-4219-a04e-0833c0020b76" alt="Área interna de reparación del taller secundario" loading="lazy">
                     </div>
                     <div class="photo-card">
-                        <img src="https://i.imgur.com/Zguayz6.jpeg" alt="Letrero identificativo del taller secundario" loading="lazy">
+                        <img src="https://github.com/user-attachments/assets/5d8f8d01-3db6-4eed-a5c1-03d7a6033263" alt="Letrero identificativo del taller secundario" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -630,7 +656,7 @@
             <h2 id="compra-heading">Compramos Equipos Dañados</h2>
             <p>¿Tienes un celular, TV, laptop o consola dañada? ¡Nosotros la compramos!</p>
             <div class="card">
-                <img src="https://i.imgur.com/t4xgasU.jpeg" alt="Dispositivos electrónicos dañados para compra" loading="lazy">
+                <img src="https://github.com/user-attachments/assets/f0f54918-b2a9-4e2c-ad56-f3be0389f3c4" alt="Dispositivos electrónicos dañados para compra" loading="lazy">
                 <h3>Dispositivos que Compramos</h3>
                 <p>Celulares con pantallas rotas, laptops que no encienden, consolas con fallos y TVs dañadas.</p>
                 <a href="#contacto" class="btn" aria-label="Solicitar cotización para equipos dañados">Solicitar Cotización</a>
@@ -695,7 +721,7 @@
     </main>
 
     <footer aria-label="Pie de página con información de contacto">
-        <p>© 2025 Servicio Técnico Profesional. Todos los derechos reservados.</p>
+        <p>© 2026 Servicio Técnico Profesional. Todos los derechos reservados.</p>
         <p>Técnico: Henry Arellano</p>
         <p>Síguenos en nuestras redes sociales:</p>
         <div class="social-links">
@@ -784,7 +810,7 @@
         // Hero background click
         heroBackground.addEventListener('click', () => {
             modal.classList.add('show');
-            modalImage.src = 'https://i.imgur.com/BGyyKV9.jpeg';
+            modalImage.src = 'https://github.com/user-attachments/assets/51b40b93-c8e8-45b9-96dd-d22945c9336a';
             modalImage.alt = 'Fondo del hero mostrando herramientas de reparación electrónica';
             document.body.style.overflow = 'hidden';
         });
